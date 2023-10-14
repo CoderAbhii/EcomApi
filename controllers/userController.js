@@ -77,7 +77,7 @@ exports.forgotPassword = async (req, res) => {
 
         const resetToken = user.getResetPasswordToken();
         await user.save({ validateBeforeSave: false });
-        const resetPasswordUrl = `http://localhost:8080/api/v1/auth/password/reset/${resetToken}`;
+        const resetPasswordUrl = `https://ecom-api-six-ebon.vercel.app/api/v1/auth/password/reset/${resetToken}`;
 
         const message = `Your password reset link is: \n\n ${resetPasswordUrl} \n\n If it was not request by you pls don't share this and ignore this message.`;
 
